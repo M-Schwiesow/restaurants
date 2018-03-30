@@ -1,0 +1,9 @@
+tr:first-child{
+  background-color: lightslategrey;
+  color: whitesmoke;
+}
+
+table{
+  border-style: solid;
+  border-width: 1px;
+}

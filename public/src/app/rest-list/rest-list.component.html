@@ -1,0 +1,20 @@
+<button (click)="goToNewRest()">New restaurant</button>
+<table border=1> <!-- style first child -->
+  <tr> <!-- this row would be first child.  Style children (th) -->
+    <th>Restaurant</th>
+    <th>Cuisine</th>
+    <th>Actions Available</th>
+  </tr>
+  <tr *ngFor="let joint of rests">
+    <td>{{joint.name}}</td>
+    <td>{{joint.cuisine}}</td>
+    <td>
+      <button class="blue" (click)="goToDetail(joint._id)">Read reviews</button>
+      <button class="grey" (click)="revealEdit(joint._id)">Update</button>
+      <!-- need to define a "now" to disable conditionally -->
+      <input type="submit" value="Delete" class="purple" (click)="removeRest(joint._id)">
+    </td>
+  </tr>
+</table>
+<app-rest-edit *ngIf="editClicked" [editClicked]="editClicked" [restId] ="passed_Id" (closeThis)="listenToEdit($event)">
+</app-rest-edit>

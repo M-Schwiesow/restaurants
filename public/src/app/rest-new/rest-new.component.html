@@ -1,14 +1,33 @@
-<h3>Register a restaurant</h3>
-<div class='wrapper'>
-<form (submit)="newRest()">
-  <p>Restaurant name:</p>
-  <input type="text" name="restaurant.name" [(ngModel)]="restaurant.name">
-  <p>Cuisine:</p>
-  <input type="text" name="restaurant.cuisine" [(ngModel)]="restaurant.cuisine">
-  <button (click)="goHome()">Cancel</button>
-  <input type="submit" value="Create">
-</form>
-<div *ngIf="errors">
-    <p *ngFor='let error of errors'>{{error}}</p>
+<div class="columns is-centered">
+  <div class="column is-half">
+    <div class="level">
+      <div class="level-left">
+        <h3 class="title is-4 level-item">Register a restaurant</h3>
+      </div>
+      <div class="level-right">
+        <button class="button is-text is-small level-item" (click)="goHome()">Home</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="columns is-centered">
+  <div class="column is-half">
+    <form class="container" (submit)="newRest()">
+      <div class="field">
+        <p class="label">Restaurant name:</p>
+        <input class="input" type="text" name="restaurant.name" [(ngModel)]="restaurant.name">
+      </div>
+      <div class="field">
+        <p class="label">Cuisine:</p>
+        <input class="input" type="text" name="restaurant.cuisine" [(ngModel)]="restaurant.cuisine">
+      </div>
+      <div class="field is-grouped">
+        <button class="button is-info is-light is-small" (click)="goHome()">Cancel</button>
+        <input class="button is-success is-small" type="submit" value="Create">
+      </div>
+    </form>
+    <div *ngIf="errors">
+      <p class="has-text-danger" *ngFor='let error of errors'>{{error}}</p>
+    </div>
   </div>
 </div>

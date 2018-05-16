@@ -1,20 +1,27 @@
-<button (click)="goToNewRest()">New restaurant</button>
-<table border=1> <!-- style first child -->
-  <tr> <!-- this row would be first child.  Style children (th) -->
-    <th>Restaurant</th>
-    <th>Cuisine</th>
-    <th>Actions Available</th>
-  </tr>
-  <tr *ngFor="let joint of rests">
-    <td>{{joint.name}}</td>
-    <td>{{joint.cuisine}}</td>
-    <td>
-      <button class="blue" (click)="goToDetail(joint._id)">Read reviews</button>
-      <button class="grey" (click)="revealEdit(joint._id)">Update</button>
-      <!-- need to define a "now" to disable conditionally -->
-      <input type="submit" value="Delete" class="purple" (click)="removeRest(joint._id)">
-    </td>
-  </tr>
-</table>
-<app-rest-edit *ngIf="editClicked" [editClicked]="editClicked" [restId] ="passed_Id" (closeThis)="listenToEdit($event)">
-</app-rest-edit>
+<div class="columns is-centered">
+  <div class="column is-half">
+    <button class="button is-primary" (click)="goToNewRest()">New restaurant</button>
+    <table class="table is-bordered is-striped"> <!-- style first child -->
+      <tr class="has-background-grey"> <!-- this row would be first child.  Style children (th) -->
+        <th class=" has-text-white-ter">Restaurant</th>
+        <th class=" has-text-white-ter">Cuisine</th>
+        <th class=" has-text-white-ter">Actions Available</th>
+      </tr>
+      <tr *ngFor="let joint of rests">
+        <td>{{joint.name}}</td>
+        <td>{{joint.cuisine}}</td>
+        <td>
+          <div class="buttons has-addons">
+          <button class="button is-small is-info" (click)="goToDetail(joint._id)">Read reviews</button>
+          <button class="button is-small is-link" (click)="revealEdit(joint._id)">Update</button>
+            
+          <input type="submit" value="Delete" class="button is-small is-danger" (click)="removeRest(joint._id)">
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  <app-rest-edit *ngIf="editClicked" [editClicked]="editClicked" [restId] ="passed_Id" (closeThis)="listenToEdit($event)">
+    </app-rest-edit>
+  </div>
+</div>

@@ -1,14 +1,20 @@
 
-<div>
-  <form (submit)="editRest()">
-    <p>Restaurant name:</p>
-    <input type="text" name="restaurant.name" [(ngModel)]="restaurant.name">
-    <p>Cuisine type:</p>
-    <input type="text" name="restaurant.cuisine" [(ngModel)]="restaurant.cuisine">
-    <button (click)="closeEdit()">Cancel</button>
-    <input type="submit" value="Edit">
+<div class="column is-half">
+  <form class="container" (submit)="editRest()">
+    <div class="field">
+      <p class="label">Restaurant name:</p>
+      <input class="input" type="text" name="restaurant.name" [(ngModel)]="restaurant.name">
+    </div>
+    <div class="field">
+      <p class="label">Cuisine type:</p>
+      <input class="input" type="text" name="restaurant.cuisine" [(ngModel)]="restaurant.cuisine">
+    </div>
+    <div class="field is-grouped">
+      <button class="button is-info is-light is-small" (click)="closeEdit()">Cancel</button>
+      <input class="button is-success is-small" type="submit" value="Edit">
+    </div>
   </form>
   <div *ngIf="errors">
-    <p *ngFor='let error of errors'>{{error}}</p>
+    <p class="has-text-danger" *ngFor='let error of errors'>{{error}}</p>
   </div>
 </div>

@@ -51,4 +51,9 @@ export class RestReviewNewComponent implements OnInit {
     })
   }
 
+  goHome(){
+    this._router.navigate(['']);
+    this.restaurant = new Restaurant;
+  }
+
 }

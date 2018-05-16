@@ -26,4 +26,9 @@ export class RestDetailComponent implements OnInit {
   goToWrite(id: String){
     this._router.navigate(['write', id]);
   }
+
+  goHome(){
+    this._router.navigate(['']);
+    this.restaurant = new Restaurant;
+  }
 }

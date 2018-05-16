@@ -1,15 +1,29 @@
-
-<h3>Reviews for {{restaurant.name}}</h3>
-<button (click)="goToWrite(restaurant._id)">New Review</button>
-<table border=1>
-  <tr>
-    <th>Customer</th>
-    <th>Stars</th>
-    <th>Description</th>
-  </tr>
-  <tr *ngFor='let review of restaurant.reviews'>
-    <td>{{review.name}}</td>
-    <td>{{review.stars}}</td>
-    <td>{{review.content}}</td>
-  </tr>
-</table>
+<div class="columns is-centered">
+    <div class="column is-half">
+      <div class="level">
+        <div class="level-left">
+          <h3 class="title is-4 level-item">Reviews for {{restaurant.name}}</h3>
+        </div>
+        <div class="level-right">
+            <button class="button is-primary is-small level-item" (click)="goToWrite(restaurant._id)">New Review</button>
+            <button class="button is-text is-small level-item" (click)="goHome()">Home</button>
+        </div>
+      </div>
+    </div>
+</div>
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <table class="table is-fullwidth is-bordered is-striped">
+        <tr class="has-background-grey">
+          <th class=" has-text-white-ter">Customer</th>
+          <th class=" has-text-white-ter">Stars</th>
+          <th class=" has-text-white-ter">Description</th>
+        </tr>
+        <tr *ngFor='let review of restaurant.reviews'>
+          <td>{{review.name}}</td>
+          <td>{{review.stars}}</td>
+          <td>{{review.content}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>

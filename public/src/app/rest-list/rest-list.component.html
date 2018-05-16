@@ -1,7 +1,14 @@
 <div class="columns is-centered">
   <div class="column is-half">
-    <button class="button is-primary" (click)="goToNewRest()">New restaurant</button>
-    <table class="table is-bordered is-striped"> <!-- style first child -->
+    <div class="level is-marginless">
+      <div class="level-left is-marginless">
+        <button class="button is-invisible"></button>
+      </div>
+      <div class="level-right is-marginless">
+        <button class="button is-primary level-item" (click)="goToNewRest()">New restaurant</button>
+      </div>
+    </div>
+    <table class="table is-bordered is-striped is-fullwidth"> <!-- style first child -->
       <tr class="has-background-grey"> <!-- this row would be first child.  Style children (th) -->
         <th class=" has-text-white-ter">Restaurant</th>
         <th class=" has-text-white-ter">Cuisine</th>
